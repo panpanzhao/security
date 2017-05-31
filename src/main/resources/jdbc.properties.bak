@@ -1,0 +1,4 @@
+jdbc.url=jdbc:mysql://rds952kloa0o4wtxf727o.mysql.rds.aliyuncs.com:3306/ju321demo
+jdbc.username=ju321demo
+jdbc.password=rj090123
+

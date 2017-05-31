@@ -1,0 +1,56 @@
+body,div,ul,li,span,input,select,option{margin: 0;padding: 0;}
+.searchUl{
+	list-style:none outside;
+}
+.searchUl li{
+	display: inline-block;
+	width: 30%;
+	word-spacing:normal;
+	padding: 3px 5px;
+	
+}
+.searchUl li span{
+	display: inline-block;
+}
+.searchUl li span.lable{
+	width: 80px;
+	overflow: hidden;
+}
+.searchUl li span input{
+	width: 200px;
+}
+.searchUl li span select{
+	width: 200px;
+}
+
+
+#add-dialog{
+	width: 630px;
+}
+#edit-form{
+	width: 630px;
+}
+
+.dialogUl{
+	list-style:none outside;
+}
+.dialogUl li{
+	display: inline-block;
+	width: 300px;
+	word-spacing:normal;
+	padding: 3px 5px;
+	
+}
+.dialogUl li span{
+	display: inline-block;
+}
+.dialogUl li span.lable{
+	width: 70px;
+	overflow: hidden;
+}
+.dialogUl li span input{
+	width: 220px;
+}
+.dialogUl li span select{
+	width: 220px;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.idasound.template.security.dao.MenuMapper">
+	<!-- 查询sql结果与java model映射 -->
+	<resultMap id="BaseResultMap"
+		type="com.idasound.template.security.model.TbsMenu">
+			<id property="id" column="ID"  />
+			<result property="parentId" column="PARENT_ID"  />
+			<result property="menuName" column="MENU_NAME"  />
+			<result property="menuDesc" column="MENU_DESC"  />
+			<result property="menuUrl" column="MENU_URL"  />
+			<result property="status" column="STATUS"  />
+			<result property="displayFlag" column="DISPLAY_FLAG"  />
+			<result property="remark" column="REMARK"  />
+	</resultMap>
+	
+	<select id="getMenuByUserName"
+		parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		<![CDATA[
+		select  t_bs_menu.* 
+		  from  t_bs_user,
+						t_bs_user_role,
+						t_bs_role,
+						t_bs_role_menu,
+						t_bs_menu
+		  where t_bs_user.id=t_bs_user_role.USER_ID AND
+						t_bs_user_role.ROLE_ID=t_bs_role.ID AND
+						t_bs_role.ID=t_bs_role_menu.ROLE_ID AND
+						t_bs_role_menu.menu_id=t_bs_menu.ID AND
+						t_bs_user.user_name=#{value} AND
+						t_bs_menu.display_flag='1'
+		order by t_bs_menu.menu_sort
+		]]>
+	</select>
+</mapper>
